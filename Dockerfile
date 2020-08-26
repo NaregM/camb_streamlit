@@ -5,13 +5,15 @@ RUN apt-get update && \
     apt-get -y install gcc mono-mcs && \
     rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt /tmp/
 
 FROM python:3.7
 
-RUN pip install -r /tmp/requirements.txt
+COPY requirements.txt /opt/app/requirements.txt
+COPY setup.sh /opt/app/setup.sh
 
-COPY src/ .
+WORKDIR /opt/app
+RUN pip install -r requirements.txt
+COPY . /opt/app
 
-RUN /tmp/setup.sh
+RUN setup.sh
 
