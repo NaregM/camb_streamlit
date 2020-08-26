@@ -13,3 +13,5 @@ RUN pip install -r /tmp/requirements.txt
 
 COPY src/ .
 
+RUN /tmp/setup.sh
+
