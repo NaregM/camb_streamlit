@@ -1,5 +1,6 @@
-FROM gcc:4.9
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN gcc -o myapp main.c
-CMD ["./myapp"]
+FROM ubuntu
+# ...
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && \
+    apt-get -y install gcc mono-mcs && \
+    rm -rf /var/lib/apt/lists/*
