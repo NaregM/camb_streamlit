@@ -4,7 +4,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y install gcc
 
+RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get install -y gfortran-8
+
+RUN mkdir -p gfortran-symlinks
+RUN ln -s /usr/bin/gfortran-8 gfortran-symlinks/gfortran
+RUN export PATH=$PWD/gfortran-symlinks:$PATH
 
 FROM python:3.7
 
