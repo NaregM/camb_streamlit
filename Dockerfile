@@ -1,8 +1,8 @@
 FROM nacyot/ubuntu
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && \
-    apt-get -y install gcc mono-mcs && \
+RUN apt-get update
+RUN apt-get -y install gcc
 
 RUN apt-get install -y gfortran
 
