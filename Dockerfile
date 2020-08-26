@@ -1,11 +1,8 @@
-FROM ubuntu
-# ...
-#ENV DEBIAN_FRONTEND noninteractive
-#RUN apt-get update && \
-#    apt-get -y install gcc mono-mcs && \
-#    rm -rf /var/lib/apt/lists/*
+FROM nacyot/ubuntu
+MAINTAINER Daekwon Kim <propellerheaven@gmail.com>
 
-RUN apt-get install gfortran
+RUN apt-get update
+RUN apt-get install -y gfortran
 
 FROM python:3.7
 
