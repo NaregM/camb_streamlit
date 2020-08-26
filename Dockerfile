@@ -7,4 +7,9 @@ RUN apt-get update && \
 
 COPY requirements.txt /tmp/
 
+FROM python:3.7
+
 RUN pip install -r /tmp/requirements.txt
+
+COPY src/ .
+
