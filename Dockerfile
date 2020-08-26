@@ -1,16 +1,7 @@
-FROM nacyot/ubuntu
-
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update
-RUN apt-get -y install gcc
-
-RUN add-apt-repository ppa:ubuntu-toolchain-r/test
-RUN apt update
-RUN apt-get install -y gfortran-7
-
-RUN mkdir -p gfortran-symlinks
-RUN ln -s /usr/bin/gfortran-7 gfortran-symlinks/gfortran
-RUN export PATH=$PWD/gfortran-symlinks:$PATH
+FROM centos:latest
+RUN yum update -y
+# add gfortran, debugging tools and make
+RUN yum install -y gcc-gfortran gdb make 
 
 FROM python:3.6.8
 
