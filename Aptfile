@@ -1,9 +1,0 @@
-libpq-dev
-postgresql-client
-build-essential
-gfortran
-libgfortran3
-python-dev
-libblas-dev
-libatlas-base-dev
-cython
