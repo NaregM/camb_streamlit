@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y install gcc
 
-RUN apt-get install -y gfortran
+RUN apt-get install -y gfortran-8
 
 FROM python:3.7
 
