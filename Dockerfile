@@ -15,9 +15,9 @@ RUN         apt-get update \
 		#&& apt instal build-essential \
 		#&& apt-get install manpages-dev \
                 && apt-get install -y \
-                    gcc-4.9 g++-4.9 gcc-4.9-base \
-                    gcc-4.8 g++-4.8 gcc-4.8-base \
-                    gcc-4.7 g++-4.7 gcc-4.7-base \
+                    gcc-4.9 g++-4.9\
+                    gcc-4.8 g++-4.8\
+                    gcc-4.7 g++-4.7\
                     gcc-8 g++-8 gcc-4.6-base \
 		    gfortran gfortran-8 \
 
