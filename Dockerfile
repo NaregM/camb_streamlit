@@ -30,28 +30,29 @@ RUN gcc --version
 
 RUN apt-get update && apt-get install -y \
         software-properties-common
-    RUN add-apt-repository ppa:deadsnakes/ppa
-    RUN apt-get update && apt-get install -y \
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update && apt-get install -y \
         python3.7 \
         python3-pip
-    RUN python3.7 -m pip install pip
-    RUN apt-get update && apt-get install -y \
+
+RUN python3.7 -m pip install pip
+RUN apt-get update && apt-get install -y \
         python3-distutils \
         python3-setuptools
 
 
-RUN pip install --upgrade pip
-RUN pip install -U setuptools
-RUN pip install -U wheel
+#RUN pip install --upgrade pip
+#RUN pip install -U setuptools
+#RUN pip install -U wheel
 
 ADD requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY requirements.txt /opt/app/requirements.txt
 COPY setup.sh /opt/app/setup.sh
 
 WORKDIR /opt/app
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 COPY . /opt/app
 
 RUN setup.sh
