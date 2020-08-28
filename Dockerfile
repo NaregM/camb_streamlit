@@ -35,9 +35,9 @@ RUN         apt-get update \
 		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8 \
 		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
 
-FROM python:3.8
+FROM python:3.6
 
-#RUN apt install libpython3.8-dev
+RUN apt install libpython3.6-dev
 RUN pip install --upgrade pip
 
 ADD requirements.txt .
