@@ -27,9 +27,11 @@ RUN gfortran --version
 RUN gcc --version
 
 
-FROM python
+FROM python:3
 
-RUN pip3 install --upgrade setuptools
+RUN pip3 install --upgrade pip3
+RUN pip install -U setuptools
+RUN pip install -U wheel
 
 ADD requirements.txt .
 RUN pip3 install -r requirements.txt
