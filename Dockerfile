@@ -12,7 +12,6 @@ RUN         apt-get update \
                     git \
                     curl \
                     vim \
-                && apt-get install -y cmake=3.5.1-1ubuntu3 \
 		#&& apt instal build-essential \
 		#&& apt-get install manpages-dev \
                 && apt-get install -y \
