@@ -49,11 +49,31 @@ ADD requirements.txt .
 RUN pip3 install -r requirements.txt
 
 COPY requirements.txt /opt/app/requirements.txt
-COPY setup.sh /opt/app/setup.sh
+#COPY setup.sh /opt/app/setup.sh
 
 WORKDIR /opt/app
 RUN pip3 install -r requirements.txt
-COPY . /opt/app
 
-RUN ./setup.sh
+
+# Expose port
+EXPOSE 8080
+
+# Start the app
+CMD ["pythone", "camb_app.py"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
