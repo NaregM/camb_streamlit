@@ -23,27 +23,24 @@ RUN         apt-get update \
                 && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100 \
 		&& update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 100 
 
-		#&& apt install software-properties-common \ 
-		#&& add-apt-repository ppa:ubuntu-toolchain-r/test \
-		#&& apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9 \
+RUN gfortran --version
+RUN gcc --version
 
- 		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9 \
-		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8 \
-		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
 
-FROM python:3.6
 
-RUN pip install --upgrade pip
+#FROM python:3.6
 
-ADD requirements.txt .
-RUN pip install -r requirements.txt
+#RUN pip install --upgrade pip
 
-COPY requirements.txt /opt/app/requirements.txt
-COPY setup.sh /opt/app/setup.sh
+#ADD requirements.txt .
+#RUN pip install -r requirements.txt
 
-WORKDIR /opt/app
-RUN pip install -r requirements.txt
-COPY . /opt/app
+#COPY requirements.txt /opt/app/requirements.txt
+#COPY setup.sh /opt/app/setup.sh
 
-RUN setup.sh
+#WORKDIR /opt/app
+#RUN pip install -r requirements.txt
+#COPY . /opt/app
+
+#RUN setup.sh
 
