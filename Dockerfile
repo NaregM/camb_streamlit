@@ -15,13 +15,14 @@ RUN         apt-get update \
                     vim-gnome \
                 && apt-get install -y cmake=3.5.1-1ubuntu3 \
                 && apt-get install -y \
-                    gcc-4.9 g++-4.9 gcc-4.9-base \
+                    gcc-8.3 g++-8.3 gcc-8.3-base \
                     gcc-4.8 g++-4.8 gcc-4.8-base \
                     gcc-4.7 g++-4.7 gcc-4.7-base \
                     gcc-4.6 g++-4.6 gcc-4.6-base \
 		    gfortran-6 \
-                && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100 \
-                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 100
+                && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8.3 100 \
+		&& update-alternatives --install /usr/bin/gfotran gfortran /usr/bin/gfortran-6 100 \
+                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8.3 100
 
 
 
