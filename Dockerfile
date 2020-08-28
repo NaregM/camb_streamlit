@@ -21,7 +21,7 @@ RUN         apt-get update \
                     gcc-4.8 g++-4.8 gcc-4.8-base \
                     gcc-4.7 g++-4.7 gcc-4.7-base \
                     gcc-8 g++-8 gcc-4.6-base \
-		    gfortran gfortran-8
+		    gfortran gfortran-8 \
 
                 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 \
                 && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100 \
