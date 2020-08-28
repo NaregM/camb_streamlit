@@ -21,3 +21,22 @@ RUN         apt-get update \
                     gcc-4.6 g++-4.6 gcc-4.6-base \
                 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100 \
                 && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 100
+
+
+
+FROM python
+
+RUN pip install --upgrade pip
+
+ADD requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY requirements.txt /opt/app/requirements.txt
+COPY setup.sh /opt/app/setup.sh
+
+WORKDIR /opt/app
+RUN pip install -r requirements.txt
+COPY . /opt/app
+
+RUN setup.sh
+
