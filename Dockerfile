@@ -1,4 +1,4 @@
-FROM        ubuntu:xenial
+FROM        ubuntu
 
 # update and install dependencies
 RUN         apt-get update \
