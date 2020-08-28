@@ -55,5 +55,5 @@ WORKDIR /opt/app
 RUN pip3 install -r requirements.txt
 COPY . /opt/app
 
-RUN setup.sh
+RUN ./setup.sh
 
