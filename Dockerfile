@@ -12,6 +12,7 @@ RUN         apt-get update \
                     git \
                     curl \
                     vim \
+		    wget \
 		#&& apt instal build-essential \
 		#&& apt-get install manpages-dev \
                 && apt-get install -y \
@@ -27,7 +28,15 @@ RUN gfortran --version
 RUN gcc --version
 
 
-FROM python:3.6.8
+#RUN apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
+#RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+
+#RUN tar -xf Python-3.7.4.tgz
+#RUN cd Python-3.7.4
+#RUN ./configure --enable-optimizations
+#RUN make -j 8
+#RUN 
+
 
 RUN pip install --upgrade pip
 RUN pip install -U setuptools
