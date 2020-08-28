@@ -24,8 +24,9 @@ RUN         apt-get update \
 
 
 
-FROM python
+FROM python3.7
 
+RUN apt install libpython3.7-dev
 RUN pip install --upgrade pip
 
 ADD requirements.txt .
