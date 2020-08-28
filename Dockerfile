@@ -30,6 +30,9 @@ RUN yum install -y gcc-gfortran gdb make
 
 RUN scl enable devtoolset-7 bash
 
+SHELL [ "/usr/bin/scl", "enable", "devtoolset-7"]
+
+
 FROM python
 
 RUN pip install --upgrade pip
