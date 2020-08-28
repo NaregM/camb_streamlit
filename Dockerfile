@@ -1,4 +1,4 @@
-FROM        ubuntu:latest
+FROM        ubuntu:bionic
 
 # update and install dependencies
 RUN         apt-get update \
@@ -34,12 +34,6 @@ RUN         apt-get update \
  		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9 \
 		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8 \
 		#&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
-
-
-RUN mkdir -p gfortran-symlinks
-RUN ln -s /usr/bin/gfortran-8 gfortran-symlinks/gfortran
-RUN export PATH=$PWD/gfortran-symlinks:$PATH
-
 
 FROM python:3.8
 
