@@ -28,14 +28,16 @@ RUN gfortran --version
 RUN gcc --version
 
 
-#RUN apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev wget libbz2-dev
-#RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
-
-#RUN tar -xf Python-3.7.4.tgz
-#RUN cd Python-3.7.4
-#RUN ./configure --enable-optimizations
-#RUN make -j 8
-#RUN 
+RUN apt-get update && apt-get install -y \
+        software-properties-common
+    RUN add-apt-repository ppa:deadsnakes/ppa
+    RUN apt-get update && apt-get install -y \
+        python3.7 \
+        python3-pip
+    RUN python3.7 -m pip install pip
+    RUN apt-get update && apt-get install -y \
+        python3-distutils \
+        python3-setuptools
 
 
 RUN pip install --upgrade pip
