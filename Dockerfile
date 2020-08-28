@@ -21,11 +21,11 @@ RUN         apt-get update \
                     gcc-4.8 g++-4.8 gcc-4.8-base \
                     gcc-4.7 g++-4.7 gcc-4.7-base \
                     gcc-4.6 g++-4.6 gcc-4.6-base \
-                && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100 \
-                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 100 \
+                #&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100 \
+                #&& update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 100 \
 
-		&& apt install software-properties-common \ 
-		&& add-apt-repository ppa:ubuntu-toolchain-r/test \
+		#&& apt install software-properties-common \ 
+		#&& add-apt-repository ppa:ubuntu-toolchain-r/test \
 		&& apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9 \
 
  		&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9 \
