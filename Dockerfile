@@ -29,7 +29,7 @@ RUN gcc --version
 
 FROM python
 
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade setuptools
 
 ADD requirements.txt .
 RUN pip3 install -r requirements.txt
@@ -38,7 +38,7 @@ COPY requirements.txt /opt/app/requirements.txt
 COPY setup.sh /opt/app/setup.sh
 
 WORKDIR /opt/app
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 COPY . /opt/app
 
 RUN setup.sh
