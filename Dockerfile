@@ -14,15 +14,23 @@ RUN         apt-get update \
                     vim \
                     vim-gnome \
                 && apt-get install -y cmake=3.5.1-1ubuntu3 \
+		&& apt instal build-essential \
+		&& apt-get install manpages-dev
                 && apt-get install -y \
-                    gcc-8.3 g++-8.3 gcc-8.3-base \
+                    gcc-4.9 g++-4.9 gcc-4.9-base \
                     gcc-4.8 g++-4.8 gcc-4.8-base \
                     gcc-4.7 g++-4.7 gcc-4.7-base \
                     gcc-4.6 g++-4.6 gcc-4.6-base \
-		    gfortran-6 \
-                && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8.3 100 \
-		&& update-alternatives --install /usr/bin/gfotran gfortran /usr/bin/gfortran-6 100 \
-                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8.3 100
+                && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100 \
+                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 100 \
+
+		&& apt install software-properties-common \ 
+		&& add-apt-repository ppa:ubuntu-toolchain-r/test \
+		&& apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9 \
+
+ 		&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
+		&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8
+		&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
 
 
 
