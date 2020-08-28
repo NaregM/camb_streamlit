@@ -22,7 +22,7 @@ RUN         apt-get update \
                     gcc-4.7 g++-4.7 gcc-4.7-base \
                     gcc-8 g++-8 gcc-4.6-base \
                 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 100 \
-                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100 \
+                && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100 
 
 		#&& apt install software-properties-common \ 
 		#&& add-apt-repository ppa:ubuntu-toolchain-r/test \
