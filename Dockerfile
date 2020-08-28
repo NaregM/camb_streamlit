@@ -15,7 +15,7 @@ RUN         apt-get update \
                     vim-gnome \
                 && apt-get install -y cmake=3.5.1-1ubuntu3 \
 		&& apt instal build-essential \
-		&& apt-get install manpages-dev
+		&& apt-get install manpages-dev \
                 && apt-get install -y \
                     gcc-4.9 g++-4.9 gcc-4.9-base \
                     gcc-4.8 g++-4.8 gcc-4.8-base \
