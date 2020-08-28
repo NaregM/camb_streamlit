@@ -37,7 +37,7 @@ RUN         apt-get update \
 
 FROM python:3.6
 
-RUN apt install libpython3.6-dev
+RUN apt-get install libpython3.6-dev
 RUN pip install --upgrade pip
 
 ADD requirements.txt .
