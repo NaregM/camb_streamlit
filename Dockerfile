@@ -28,7 +28,7 @@ RUN yum update -y
 # add gfortran, debugging tools and make
 RUN yum install -y gcc-gfortran gdb make 
 
-FROM python:3.6.8
+FROM python
 
 RUN pip install --upgrade pip
 
