@@ -27,20 +27,19 @@ RUN gfortran --version
 RUN gcc --version
 
 
+FROM python:3.6
 
-#FROM python:3.6
+RUN pip3 install --upgrade pip
 
-#RUN pip install --upgrade pip
+ADD requirements.txt .
+RUN pip3 install -r requirements.txt
 
-#ADD requirements.txt .
-#RUN pip install -r requirements.txt
+COPY requirements.txt /opt/app/requirements.txt
+COPY setup.sh /opt/app/setup.sh
 
-#COPY requirements.txt /opt/app/requirements.txt
-#COPY setup.sh /opt/app/setup.sh
+WORKDIR /opt/app
+RUN pip install -r requirements.txt
+COPY . /opt/app
 
-#WORKDIR /opt/app
-#RUN pip install -r requirements.txt
-#COPY . /opt/app
-
-#RUN setup.sh
+RUN setup.sh
 
