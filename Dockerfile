@@ -27,9 +27,9 @@ RUN gfortran --version
 RUN gcc --version
 
 
-FROM python:3
+FROM python:3.6.8
 
-RUN pip3 install --upgrade pip3
+RUN pip install --upgrade pip
 RUN pip install -U setuptools
 RUN pip install -U wheel
 
