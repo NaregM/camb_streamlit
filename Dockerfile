@@ -1,4 +1,4 @@
-FROM        ubuntu:bionic
+FROM        ubuntu:xenial
 
 # update and install dependencies
 RUN         apt-get update \
