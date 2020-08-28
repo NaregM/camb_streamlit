@@ -28,6 +28,8 @@ RUN yum update -y
 # add gfortran, debugging tools and make
 RUN yum install -y gcc-gfortran gdb make 
 
+RUN scl enable devtoolset-7 bash
+
 FROM python
 
 RUN pip install --upgrade pip
