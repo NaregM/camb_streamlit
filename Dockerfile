@@ -2,10 +2,11 @@ FROM        ubuntu
 
 
 # Copy our application code
-WORKDIR /home/nareg/github/camb_streamlit
-COPY . .
-COPY requirements.txt .
-COPY startup.sh .
+COPY . /app
+WORKDIR /app
+#COPY . .
+#COPY requirements.txt .
+#COPY startup.sh .
 
 # update and install dependencies
 RUN         apt-get update \
@@ -49,7 +50,7 @@ RUN pip3 install -r requirements.txt
 
 RUN chmod +x startup.sh
 
-RUN /startup.sh #["streamlit", "run"]
+RUN startup.sh #["streamlit", "run"]
 
 ## Start the app
 #CMD streamlit run app.py --bind 0.0.0.0:$PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
