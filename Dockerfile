@@ -62,10 +62,10 @@ RUN pip3 install -r requirements.txt
 
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8501
 
 # Start the app
-CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
+CMD streamlit run app.py --server.port $PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
 
 
 
