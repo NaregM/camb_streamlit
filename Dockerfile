@@ -64,10 +64,10 @@ RUN pip3 install -r requirements.txt
 # Expose port
 #EXPOSE 8501
 
-#ENTRYPOINT ["streamlit", "run"]
+ENTRYPOINT "startup.sh" #["streamlit", "run"]
 
-# Start the app
-CMD streamlit run app.py --bind 0.0.0.0:$PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
+## Start the app
+#CMD streamlit run app.py --bind 0.0.0.0:$PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
 
 
 
