@@ -1,5 +1,11 @@
 FROM        ubuntu
 
+
+# Copy our application code
+WORKDIR /home/nareg/github/camb_streamlit
+COPY . .
+COPY requirements.txt .
+
 # update and install dependencies
 RUN         apt-get update \
                 && apt-get install -y \
@@ -46,9 +52,9 @@ RUN apt-get update && apt-get install -y \
 #RUN pip install -U wheel
 
 ADD requirements.txt .
-RUN pip3 install -r requirements.txt
+#RUN pip3 install -r requirements.txt
 
-COPY requirements.txt /opt/app/requirements.txt
+#COPY requirements.txt /opt/app/requirements.txt
 #COPY setup.sh /opt/app/setup.sh
 
 WORKDIR /opt/app
@@ -59,7 +65,7 @@ RUN pip3 install -r requirements.txt
 EXPOSE 8080
 
 # Start the app
-CMD ["pythone", "camb_app.py"]
+CMD ["python", "app.py"]
 
 
 
