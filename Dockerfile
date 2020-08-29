@@ -67,7 +67,7 @@ RUN pip3 install -r requirements.txt
 #ENTRYPOINT ["streamlit", "run"]
 
 # Start the app
-CMD streamlit run app.py --server.port 8501 # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
+CMD streamlit run app.py --bind 0.0.0.0:$PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
 
 
 
