@@ -49,7 +49,7 @@ RUN pip3 install -r requirements.txt
 
 RUN chmod +x startup.sh
 
-RUN startup.sh #["streamlit", "run"]
+RUN /startup.sh #["streamlit", "run"]
 
 ## Start the app
 #CMD streamlit run app.py --bind 0.0.0.0:$PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
