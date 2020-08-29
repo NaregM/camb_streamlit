@@ -5,6 +5,7 @@ FROM        ubuntu
 WORKDIR /home/nareg/github/camb_streamlit
 COPY . .
 COPY requirements.txt .
+COPY startup.sh .
 
 # update and install dependencies
 RUN         apt-get update \
