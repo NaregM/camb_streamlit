@@ -65,7 +65,7 @@ RUN pip3 install -r requirements.txt
 EXPOSE 8080
 
 # Start the app
-CMD ["python", "app.py"]
+CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
 
 
 
