@@ -31,9 +31,6 @@ RUN         apt-get update \
                 && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100 \
 		&& update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-8 100 
 
-RUN gfortran --version
-RUN gcc --version
-
 
 RUN apt-get update && apt-get install -y \
         software-properties-common
@@ -48,24 +45,11 @@ RUN apt-get update && apt-get install -y \
         python3-setuptools
 
 
-#RUN pip install --upgrade pip
-#RUN pip install -U setuptools
-#RUN pip install -U wheel
-
-#ADD requirements.txt .
-#RUN pip3 install -r requirements.txt
-
-#COPY requirements.txt /opt/app/requirements.txt
-#COPY setup.sh /opt/app/setup.sh
-
-#WORKDIR /opt/app
 RUN pip3 install -r requirements.txt
 
+RUN chmod +x /startup.sh
 
-# Expose port
-#EXPOSE 8501
-
-ENTRYPOINT "startup.sh" #["streamlit", "run"]
+RUN startup.sh #["streamlit", "run"]
 
 ## Start the app
 #CMD streamlit run app.py --bind 0.0.0.0:$PORT # CMD ["streamlit", "run", "app.py"]   # change python to "streamlit", "run"
