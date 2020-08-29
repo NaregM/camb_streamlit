@@ -51,13 +51,13 @@ RUN apt-get update && apt-get install -y \
 #RUN pip install -U setuptools
 #RUN pip install -U wheel
 
-ADD requirements.txt .
+#ADD requirements.txt .
 #RUN pip3 install -r requirements.txt
 
 #COPY requirements.txt /opt/app/requirements.txt
 #COPY setup.sh /opt/app/setup.sh
 
-WORKDIR /opt/app
+#WORKDIR /opt/app
 RUN pip3 install -r requirements.txt
 
 
