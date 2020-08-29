@@ -47,7 +47,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install -r requirements.txt
 
-RUN chmod +x /startup.sh
+RUN chmod +x startup.sh
 
 RUN startup.sh #["streamlit", "run"]
 
