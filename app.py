@@ -137,3 +137,19 @@ if matter_ps:
     plt.ylabel(r"$\mathrm{Power Spectrum} \ [add unit]$", size = 14)
     plt.legend()
     st.pyplot()
+
+
+
+
+
+
+if __name__ == '__main__':
+
+    main()
+
+
+
+
+
+
+
